@@ -1,0 +1,123 @@
+{
+    "crawl": {
+        "enable": true,
+        "github": {
+            "enable": true,
+            "pages": 2,
+            "push_to": [
+                "free"
+            ]
+        },
+        "include_nodes": true,
+        "max_fails": 5,
+        "persist": {
+            "nodes": "crawledproxies",
+            "subscribe": "crawledsubs"
+        },
+        "repositories": [
+            {
+                "commits": 3,
+                "enable": true,
+                "push_to": [
+                    "free"
+                ],
+                "repo": "Free-servers",
+                "username": "Pawdroid"
+            },
+            {
+                "commits": 3,
+                "enable": true,
+                "push_to": [
+                    "free"
+                ],
+                "repo": "free",
+                "username": "freefq"
+            },
+            {
+                "commits": 3,
+                "enable": true,
+                "push_to": [
+                    "free"
+                ],
+                "repo": "free",
+                "username": "wrfree"
+            }
+        ]
+    },
+    "groups": {
+        "free": {
+            "emoji": true,
+            "list_only": true,
+            "targets": {
+                "clash": "free-clash",
+                "singbox": "free-singbox",
+                "v2ray": "free-v2ray"
+            }
+        }
+    },
+    "sites": [
+        {
+            "check_alive": true,
+            "enable": true,
+            "name": "Pawdroid-Free-servers",
+            "push_to": [
+                "free"
+            ],
+            "subscribe": [
+                "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
+            ]
+        },
+        {
+            "check_alive": true,
+            "enable": true,
+            "name": "freefq-free",
+            "push_to": [
+                "free"
+            ],
+            "subscribe": [
+                "https://raw.githubusercontent.com/freefq/free/master/v2"
+            ]
+        },
+        {
+            "check_alive": true,
+            "enable": true,
+            "name": "wrfree-free",
+            "push_to": [
+                "free"
+            ],
+            "subscribe": [
+                "https://raw.githubusercontent.com/wrfree/free/master/v2"
+            ]
+        }
+    ],
+    "storage": {
+        "engine": "gist",
+        "items": {
+            "crawledproxies": {
+                "filename": "proxies.txt",
+                "gist_id": "263799b5931292042c0cbca2567eaf54",
+                "username": "xinzuo1988"
+            },
+            "crawledsubs": {
+                "filename": "subs.json",
+                "gist_id": "263799b5931292042c0cbca2567eaf54",
+                "username": "xinzuo1988"
+            },
+            "free-clash": {
+                "filename": "clash.yaml",
+                "gist_id": "263799b5931292042c0cbca2567eaf54",
+                "username": "xinzuo1988"
+            },
+            "free-singbox": {
+                "filename": "singbox.json",
+                "gist_id": "263799b5931292042c0cbca2567eaf54",
+                "username": "xinzuo1988"
+            },
+            "free-v2ray": {
+                "filename": "v2ray.txt",
+                "gist_id": "263799b5931292042c0cbca2567eaf54",
+                "username": "xinzuo1988"
+            }
+        }
+    }
+}
