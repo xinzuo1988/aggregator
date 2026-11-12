@@ -2,7 +2,7 @@
     "crawl": {
         "enable": true,
         "github": {
-            "enable": true,
+            "enable": false,
             "pages": 2,
             "push_to": [
                 "free"
