@@ -1,19 +1,16 @@
 name: Process
 on:
   schedule:
-    - cron: "05 03 * * *"
-    - cron: "05 11 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 env:
   # time zone
   TZ: Asia/Shanghai
 
-  # network proxy aggregate config
-  SUBSCRIBE_CONF: ${{ secrets.SUBSCRIBE_CONF }}
-
-  # token
+  # token for pushing to Gist (also used for GitHub code search)
   PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+  GH_TOKEN: ${{ secrets.PUSH_TOKEN }}
 
   # not check connective
   SKIP_ALIVE_CHECK: ${{ vars.SKIP_ALIVE_CHECK }}
@@ -24,7 +21,7 @@ env:
   # workflow mode
   WORKFLOW_MODE: ${{ vars.WORKFLOW_MODE }}
 
-  # include spwcial protocols, such vless hysteria2 and hysteria
+  # include special protocols, such vless hysteria2 and hysteria
   ENABLE_SPECIAL_PROTOCOLS: ${{ vars.ENABLE_SPECIAL_PROTOCOLS }}
 
 jobs:
@@ -48,7 +45,7 @@ jobs:
         run: pip3 install -r requirements.txt
 
       - name: Process
-        run: python -u subscribe/process.py --overwrite
+        run: python -u subscribe/process.py -s subscribe/config.json --overwrite
 
       - name: Timestamp
         run: date
